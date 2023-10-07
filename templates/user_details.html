@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Listing</title>
+</head>
+<body>
+    <h3>User Details</h3>
+    <ul>
+        <ul>First Name: {{ user.first_name }}</ul>
+        <ul>Last Name: {{ user.last_name }} </ul>
+        <ul>User Image:</ul>
+        <img src="{{ user.image_url }}" width="150" height="150">
+
+<p>
+        <form action="{{ url_for('add_post_form', user_id=user_id) }}" method="GET">
+            <input type="submit" value="Add Post">
+        </form>
+        </ul>
+    </p>
+    <!-- THIS LOOP FOR POSTS WORKS AND CREATES LINKS-->
+    <ul>
+        <h2>{{ user.first_name }} {{ user.last_name }} Post Links: </user></h2>
+        {% for post in posts %}
+        <li>
+            <a href="{{ url_for('post_detail', user_id=user.id, post_id=post.post_id) }}">
+                {{ post.post_title }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+
+
+</body>
+</html>
+<!--   <form action="/add_post_form">
+            <input type="submit" value="Submit">
+          </form>
+ -->

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Post Form </title>
+</head>
+<body>
+    <h1>New Post Form</h1>
+    
+    <h1>Add Post For: {{ user.first_name }} {{ user.last_name }}
+    
+   <form action="{{ url_for('create_post', user_id=user_id) }}" method="POST">
+       
+
+        <label for="Title Text Box">Title text here</label>
+        <input type="text" id="post_title" name="post_title" required><br><br>
+        
+   
+        <label for="Content Text Box">Content Box Here</label>
+        <input type="text" id="post_content" name="post_content" required><br><br>
+        
+        <input type="submit" value="Post Add">
+      
+        <h3>Cancel button to go back to user_listing</h3>
+        <input type="submit" value="Cancel">
+</body>
+</html>
+<!--ul>
+            <a href="/users/{{ user_id }}/posts/new"> Add a post</a>
+        </ul>
+    -->
+<!--  
+    <form action="/user_details" method="GET">
+        <h1>Enter User ID and post info</h1>
+        <label for="user_id">Enter User ID:</label>
+        <input type="text" id="user_id" name="user_id" required><br><br>
+        <input type="submit" value="Lookup User">
+    </form>
+-->
